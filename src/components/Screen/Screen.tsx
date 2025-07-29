@@ -1,28 +1,28 @@
 import React, { ReactNode } from "react";
 import { ScrollView, View } from "react-native";
 
-import { Header } from "@components";
+import { Header, HeaderProps } from "@components";
 import { useAppSafeArea } from "@hooks";
 
-interface Props {
+interface Props extends HeaderProps {
   children: ReactNode
   scrollable?: boolean
 }
 
-export function Screen({ children, scrollable }: Props) {
+export function Screen({ children, scrollable, ...headerProps }: Props) {
   const { top } = useAppSafeArea();
 
   if (scrollable) {
     return (
-      <ScrollView style={{ paddingTop: top }}>
+      <ScrollView className="flex-1" style={{ paddingTop: top }}>
         {children}
       </ScrollView>
     )
   }
 
   return (
-    <View style={{ paddingTop: top }}>
-      <Header />
+    <View className="flex-1" style={{ paddingTop: top }}>
+      <Header {...headerProps} />
       {children}
     </View>
   )

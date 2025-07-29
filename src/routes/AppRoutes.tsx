@@ -1,10 +1,13 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import { HomeScreen } from "@screens";
+import { HomeScreen, ZipCodeDetailsScreen } from "@screens";
 
-type AppStackParamsList = {
-  HomeScreen: undefined
+export type AppStackParamsList = {
+  HomeScreen: undefined;
+  ZipCodeDetailsScreen: {
+    zipCode: string;
+  }
 }
 
 const Stack = createNativeStackNavigator<AppStackParamsList>();
@@ -12,8 +15,9 @@ const Stack = createNativeStackNavigator<AppStackParamsList>();
 export function AppRoutes() {
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Navigator screenOptions={{ headerShown: false, fullScreenGestureEnabled: true }}>
         <Stack.Screen name="HomeScreen" component={HomeScreen}/>
+        <Stack.Screen name="ZipCodeDetailsScreen" component={ZipCodeDetailsScreen}/>
       </Stack.Navigator>
     </NavigationContainer>
   )
