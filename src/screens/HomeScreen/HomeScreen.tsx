@@ -23,6 +23,7 @@ export function HomeScreen({ navigation }: ScreenProps) {
           onChangeText={setZipCode}
           className="text-black w-full h-12 rounded-2xl px-3"
           placeholder="Digite o cep"
+          keyboardType="numeric"
         />
 
         <Button title="Buscar cep" onPress={handleGoToZipCodeDetailsScreen}/>

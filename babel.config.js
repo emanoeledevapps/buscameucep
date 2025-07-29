@@ -8,7 +8,9 @@ module.exports = {
         '@components': './src/components',
         '@hooks': './src/hooks',
         '@routes': './src/routes',
-        '@screens': './src/screens'
+        '@screens': './src/screens',
+        '@domain': './src/domain',
+        '@api': './src/api'
       },
     }],
   ]
