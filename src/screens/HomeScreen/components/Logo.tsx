@@ -1,6 +1,6 @@
 import { View, Image } from "react-native";
 //@ts-ignore
-import LogoApp from "../../../assets/images/icon.png";
+import LogoApp from "../../../assets/images/logo-elements.png";
 import { Text } from "@components";
 
 export function Logo() {

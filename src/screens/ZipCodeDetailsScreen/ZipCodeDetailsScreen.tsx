@@ -45,7 +45,7 @@ export function ZipCodeDetailsScreen({ route }: ScreenProps) {
   }
 
   return (
-    <Screen title="Detalhes do CEP" showBackButton>
+    <Screen title="Detalhes do CEP" showBackButton scrollable>
       <View className="p-5 pt-10">
         <Text className="font-bold text-center text-6xl text-text-primary">{zipCode}</Text>
         

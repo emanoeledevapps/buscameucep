@@ -1,3 +1,4 @@
+import { InfoCircleIcon } from "../../assets/icons/InfoCircle";
 import { ChevronLeftIcon } from "../../assets/icons/ChevronLeft";
 import { SearchIcon } from "../../assets/icons/SearchIcon";
 
@@ -18,7 +19,8 @@ export function Icon({ name, color, size }: Props) {
 
 const icons = {
   search: SearchIcon,
-  chevronLeft: ChevronLeftIcon
+  chevronLeft: ChevronLeftIcon,
+  infoCircle: InfoCircleIcon
 }
 
 export type IconName = keyof typeof icons;
