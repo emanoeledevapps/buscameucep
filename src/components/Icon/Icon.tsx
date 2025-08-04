@@ -1,3 +1,4 @@
+import { ChevronLeftIcon } from "../../assets/icons/ChevronLeft";
 import { SearchIcon } from "../../assets/icons/SearchIcon";
 
 export interface IconBaseProps {
@@ -16,7 +17,8 @@ export function Icon({ name, color, size }: Props) {
 }
 
 const icons = {
-  search: SearchIcon
+  search: SearchIcon,
+  chevronLeft: ChevronLeftIcon
 }
 
 export type IconName = keyof typeof icons;
