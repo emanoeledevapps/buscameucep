@@ -15,7 +15,7 @@ function toZipCodeDetails(responseApi: ZipCodeApiProps): ZipCodeProps {
     state: responseApi.estado,
     uf: responseApi.uf,
     unit: responseApi.unidade,
-    error: responseApi.erro
+    zipCodeNotFound: responseApi.erro
   }
 }
 

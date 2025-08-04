@@ -12,7 +12,7 @@ export interface ZipCodeProps {
   gia: number;
   ddd: number;
   siafi: number;
-  error?: boolean;
+  zipCodeNotFound?: boolean;
 }
 
 export interface ZipCodeApiProps {

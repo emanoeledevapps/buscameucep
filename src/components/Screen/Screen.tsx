@@ -15,7 +15,7 @@ export function Screen({ children, scrollable, hideHeader, ...headerProps }: Pro
 
   if (scrollable) {
     return (
-      <ScrollView className="flex-1 bg-gray-200" style={{ paddingTop: top }}>
+      <ScrollView className="flex-1 bg-background" style={{ paddingTop: top }}>
         {!hideHeader && (
           <Header {...headerProps} />
         )}
@@ -25,7 +25,7 @@ export function Screen({ children, scrollable, hideHeader, ...headerProps }: Pro
   }
 
   return (
-    <View className="flex-1 bg-gray-200" style={{ paddingTop: top }}>
+    <View className="flex-1 bg-background" style={{ paddingTop: top }}>
       {!hideHeader && (
         <Header {...headerProps} />
       )}

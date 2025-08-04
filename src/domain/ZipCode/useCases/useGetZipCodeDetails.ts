@@ -6,7 +6,7 @@ interface Props {
   zipCode: string;
 }
 export function useGetZipCodeDetails({ zipCode }: Props) {
-  const { data, isLoading, isError } = useQuery({
+  const { data, isLoading, isError, isRefetching, refetch } = useQuery({
     queryKey: [QueryKeys.getZipCodeDetails, zipCode],
     queryFn: () => zipCodeService.getZipCodeDetails(zipCode)
   })
@@ -14,6 +14,8 @@ export function useGetZipCodeDetails({ zipCode }: Props) {
   return {
     isLoading,
     data,
-    isError
+    isError,
+    isRefetching,
+    refetch
   }
 }
