@@ -1,4 +1,4 @@
-package com.buscameucepmobile
+package com.edevapps.buscameucep
 
 import android.app.Application
 import com.facebook.react.PackageList
