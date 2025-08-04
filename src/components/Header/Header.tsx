@@ -16,7 +16,7 @@ export function Header({ title, showBackButton }: HeaderProps) {
   }
 
   return (
-    <View className="w-full h-14 flex-row items-center justify-between px-5 border-b">
+    <View className="w-full h-14 flex-row items-center justify-between px-5 border-b bg-primary border-text-secondary">
       <View className="w-10">
         {showBackButton && (
           <TouchableOpacity className="w-5 h-5 bg-blue-500" onPress={handleGoBack}>
@@ -25,7 +25,7 @@ export function Header({ title, showBackButton }: HeaderProps) {
         )}
       </View>
 
-      <Text className="font-bold">{title}</Text>
+      <Text className="font-bold text-white">{title}</Text>
 
       <View className="w-10" />
     </View>

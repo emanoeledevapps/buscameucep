@@ -1,8 +1,7 @@
 import React, { ReactNode } from "react";
 import { ScrollView, View } from "react-native";
 
-import { Header, HeaderProps } from "@components";
-import { useAppSafeArea } from "@hooks";
+import { Header, HeaderProps, StatusBar } from "@components";
 
 interface Props extends HeaderProps {
   children: ReactNode
@@ -11,11 +10,10 @@ interface Props extends HeaderProps {
 }
 
 export function Screen({ children, scrollable, hideHeader, ...headerProps }: Props) {
-  const { top } = useAppSafeArea();
-
   if (scrollable) {
     return (
-      <ScrollView className="flex-1 bg-background" style={{ paddingTop: top }}>
+      <ScrollView className="flex-1 bg-background">
+        <StatusBar />
         {!hideHeader && (
           <Header {...headerProps} />
         )}
@@ -25,7 +23,8 @@ export function Screen({ children, scrollable, hideHeader, ...headerProps }: Pro
   }
 
   return (
-    <View className="flex-1 bg-background" style={{ paddingTop: top }}>
+    <View className="flex-1 bg-background">
+      <StatusBar />
       {!hideHeader && (
         <Header {...headerProps} />
       )}
