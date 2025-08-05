@@ -16,7 +16,8 @@ export function ZipCodeDetailsScreen({ route }: ScreenProps) {
     return (
       <Screen title="Detalhes do CEP" showBackButton>
         <View className="flex-1 items-center justify-center">
-          <ActivityIndicator size={100} color="#2F80ED" />
+          <ActivityIndicator size={50} color="#2F80ED" />
+          <Text className="text-center mt-3 text-primary">Carregando dados...</Text>
         </View>
       </Screen>
     )
@@ -38,7 +39,7 @@ export function ZipCodeDetailsScreen({ route }: ScreenProps) {
       <Screen title="Detalhes do CEP" showBackButton>
         <View className="flex-1 items-center justify-center">
           <Text className="font-bold text-center text-4xl">{zipCode}</Text>
-          <Text className="text-error">CEP não encontrado</Text>
+          <Text className="text-error">CEP não encontrado!</Text>
         </View>
       </Screen>
     )
