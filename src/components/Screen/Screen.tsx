@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import { ScrollView, View } from "react-native";
+import { Keyboard, KeyboardAvoidingView, Platform, ScrollView, TouchableWithoutFeedback, View } from "react-native";
 
 import { Header, HeaderProps, StatusBar } from "@components";
 
@@ -10,25 +10,33 @@ interface Props extends HeaderProps {
 }
 
 export function Screen({ children, scrollable, hideHeader, ...headerProps }: Props) {
-  if (scrollable) {
-    return (
-      <ScrollView className="flex-1 bg-background">
+  return (
+    <KeyboardAvoidingView
+      style={{ flex: 1 }}
+      behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+    >
+      <View className="flex-1 bg-background">
         <StatusBar />
         {!hideHeader && (
           <Header {...headerProps} />
         )}
-        {children}
-      </ScrollView>
-    )
-  }
 
-  return (
-    <View className="flex-1 bg-background">
-      <StatusBar />
-      {!hideHeader && (
-        <Header {...headerProps} />
-      )}
-      {children}
-    </View>
+        {scrollable ? (
+          <ScrollView 
+            showsVerticalScrollIndicator={false}
+            keyboardShouldPersistTaps="handled"
+          >
+            {children}
+          </ScrollView>
+        ) : (
+          <TouchableWithoutFeedback
+            style={{ flex: 1 }}
+            onPress={() => Keyboard.dismiss()}
+          >
+            {children}
+          </TouchableWithoutFeedback>
+        )}
+      </View>
+    </KeyboardAvoidingView>
   )
 }
